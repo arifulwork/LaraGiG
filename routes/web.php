@@ -26,3 +26,10 @@ Route::get('/response', function () {
     ->header('Content-Type', 'text/plain')
     ->header('Ariful', 'Islam'); // response
 });
+
+
+Route::get('wildcard/{id}', function ($id) {
+    return response ('EndPoint' .  $id);      // Wildcard Endpoint 
+});
+
+
