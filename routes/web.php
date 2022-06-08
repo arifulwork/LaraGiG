@@ -35,3 +35,9 @@ Route::get('wildcard/{id}', function ($id) {
 Route::get('wildcards/{id}', function ($id) {
     return response ('EndPoint' .  $id);      // Route Constraints
 })->where('id','[0-9]+');
+
+
+Route::get('wildcardc/{id}', function ($id) {
+    dd($id); // Die Dump helper 
+    return response ('EndPoint' .  $id);      
+});
