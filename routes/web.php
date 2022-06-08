@@ -17,7 +17,23 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+
+        'heading' => 'Latest Listings',
+        'listings' => [
+            [
+                'id' => 1,
+                'title'=> 'Something More',
+                'description' => 'lorem dipsum'
+            ],
+
+            [
+                'id' => 2,
+                'title'=> 'Something More Two',
+                'description' => 'lorem dipsum'
+            ]
+        ]
+    ]);
 });
 
 
