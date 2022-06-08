@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use Illuminate\Http\Request;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,4 +43,25 @@ Route::get('wildcards/{id}', function ($id) {
 Route::get('wildcardc/{id}', function ($id) {
     dd($id); // Die Dump helper 
     return response ('EndPoint' .  $id);      
+});
+
+
+
+Route::get('/search', function (Request $request) {
+    dd($request); // Request Object http://127.0.0.1:8000/search?name=Ariful&city=Khulna
+       
+});
+
+Route::get('/searchparam', function (Request $request) {
+    dd($request->name . ' '.$request->city); // Request Query Parameters   
+    
+    /* ------- http://127.0.0.1:8000/searchparam?name=Ariful&city=Khulna */
+       
+});
+
+Route::get('/returnparam', function (Request $request) {
+    return $request->name . ' '.$request->city; // Return Request Query Parameters   
+    
+    /* ------- http://127.0.0.1:8000/returnparam?name=Ariful&city=Khulna */
+       
 });
