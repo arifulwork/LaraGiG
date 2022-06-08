@@ -32,4 +32,6 @@ Route::get('wildcard/{id}', function ($id) {
     return response ('EndPoint' .  $id);      // Wildcard Endpoint 
 });
 
-
+Route::get('wildcards/{id}', function ($id) {
+    return response ('EndPoint' .  $id);      // Route Constraints
+})->where('id','[0-9]+');
