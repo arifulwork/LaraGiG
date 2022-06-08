@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/route', function () {
+    return ("Hello World");   // routing
+});
+
+Route::get('/response', function () {
+    return response ("Hello World", 200)
+    ->header('Content-Type', 'text/plain')
+    ->header('Ariful', 'Islam'); // response
+});
